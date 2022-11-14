@@ -1,4 +1,5 @@
 import { Card, Button } from 'react-bootstrap';
+import "./HouseCard.css";
 
 function HouseCard() {
     return (

@@ -28,4 +28,5 @@ ports:
 
 
 pre-commands:
-+ npm install bootstrap react-bootstrap
++ npm install bootstrap react-bootstrap react react-router-dom style-components
++ npm i --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
