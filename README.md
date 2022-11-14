@@ -25,3 +25,7 @@ ports:
 + golang-user: 4010
 + golang-admin: 4020
 + golang-data: 4030
+
+
+pre-commands:
++ npm install bootstrap react-bootstrap
