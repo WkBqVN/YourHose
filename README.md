@@ -22,9 +22,11 @@ ports:
 + node: 3010
 + reactjs: 3000
 
-+ golang-user: 4010
-+ golang-admin: 4020
-+ golang-data: 4030
++ golang/user - node/mssql: 4010
++ golang/admin - C#/mssql: 4040
+
++ golang/control-python/mongo: 5000 
++ golang/database - postgres
 
 
 pre-commands:
