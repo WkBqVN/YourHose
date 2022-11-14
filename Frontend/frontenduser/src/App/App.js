@@ -1,25 +1,17 @@
-import logo from '../logo.svg';
 import '../App/App.css';
 import HouseCard from '../Component/HouseComponent/HouseCard';
+import NavbarTop from '../Component/NavbarComponent/NavbarTop';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <HouseCard />
+      <NavbarTop />
+      <div>
+        <HouseCard />
+        <HouseCard />
+        <HouseCard />
+        <HouseCard />
+      </div>
     </div>
   );
 }

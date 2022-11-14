@@ -1,0 +1,15 @@
+.NavList li{
+  display: inline-block;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:15px;
+  color : white;
+}
+
+.NavTitle h5{
+  color :white;
+}
+
+
+
+
