@@ -1,5 +1,5 @@
 import '../App/App.css';
-import HouseCard from '../Component/HouseComponent/HouseCard';
+import HouseCard from '../Component/HouseComponent/HouseCard/HouseCard';
 import NavbarTop from '../Component/NavbarComponent/NavbarTop';
 
 function App() {
