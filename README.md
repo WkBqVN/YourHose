@@ -19,14 +19,18 @@ Self Learning Project
 
 
 ports:
-+ node: 3010
 + reactjs: 3000
 
-+ golang-user: 4010
-+ golang-admin: 4020
-+ golang-data: 4030
++ golang/user - node/mssql: 5050-4050
+
++ golang/admin - C#/mssql: 5040-4040
+
++ golang/control-python/mongo: 5000 
+
++ golang/database - postgres
 
 
 pre-commands:
 + npm install bootstrap react-bootstrap react react-router-dom style-components
++ npm install express
 + npm i --save @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
