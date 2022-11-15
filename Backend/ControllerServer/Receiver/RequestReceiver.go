@@ -1,4 +1,4 @@
-package receiver
+package Receiver
 
 type RequestReceiver struct {
 	RequestIP string
