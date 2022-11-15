@@ -17,6 +17,9 @@ Self Learning Project
 
 9. Front End - React js
 
+10. Create Api generator for component?
+
+11. Switch beetween postgres or mssql up to what is up(golang server is handle this)
 
 ports:
 + reactjs: 3000
@@ -27,7 +30,7 @@ ports:
 
 + golang/control-python/mongo: 5000 
 
-+ golang/database - postgres
++ golang/database - postgres(use to read which server is up)
 
 
 pre-commands:
