@@ -1,6 +1,11 @@
 package sender
 
-type RequestSender struct{
-	Name string
-	Age int
+type RequestSender struct {
+	RequestSourceIP string
+	RequestType    string
+	RequestDesIP   string
+	RequestBody interface{}
 }
+
+
+
