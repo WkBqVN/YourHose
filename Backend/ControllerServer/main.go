@@ -1,36 +1,50 @@
 package main
 
 import (
-	"controllerserver/sender"
-	// "encoding/json"
+	"controllerserver/core/apimanager/apimodel/base/request"
+	"controllerserver/core/data"
 	"fmt"
-	// "log"
-	// "net/http"
+	"io"
+	"log"
+	"net/http"
 )
 
-// "controllerserver/Receiver"
-
-// "controllerserver/Core"
-
 func main() {
-	p := sender.RequestSender{}
+	http.HandleFunc("/", readRequest)
+	err := http.ListenAndServe(":5050", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
 
-	fmt.Println(p)
+func readRequest(w http.ResponseWriter, r *http.Request) {
+	requestIn := request.GetRequestBase()
+	requestHead := requestIn.GetRequestBaseHead()
+	requestBody := requestIn.GetRequestBaseBody()
+	requestTail := requestIn.GetRequestBaseTail()
 
-	// p.RequestBody["test"] = "test contect"
-	// http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
-	// 	w.Header().Set("Content-Type", "application/json")
-	// 	w.WriteHeader(http.StatusCreated)
-	// 	jsonResp, err := json.Marshal(p)
-	// 	if err != nil {
-	// 		log.Fatalf("Error happened in JSON marshal. Err: %s", err)
-	// 	}
-	// 	w.Write(jsonResp)
-	// 	return
-	// })
+	requestHead.SetRequestHeadFrom(r.Host)
+	requestHead.SetRequestHeadInputType(r.Method)
+	requestHead.SetRequestHeadIP("ip")
+	requestHead.SetRequestMethod(r.Method)
 
-	// fmt.Printf("Starting server at port 5050\n")
-	// if err := http.ListenAndServe(":5050", nil); err != nil {
-	// 	log.Fatal(err)
-	// }
+	requestIn.SetRequestBaseHead(requestHead)
+	requestIn.SetRequestBaseTail(requestTail)
+	requestIn.SetRequestBaseBody(requestBody)
+
+	// io.WriteString(w, requestIn.ToString())
+	testMap := map[string]interface{}{
+		"a": "bc",
+	}
+	jsstr := `{"a":"b"}`
+	jsm := data.GetJsonManager()
+
+	s := jsm.ConvertObjToJson(testMap)
+
+	jsm.ConvertJsonToObj(jsstr)
+
+	fmt.Println("dfas: ")
+	fmt.Println(jsm.GetJsonObj())
+
+	io.WriteString(w, s)
 }
