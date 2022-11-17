@@ -1,7 +1,7 @@
 package request
 
-type IRequest interface {
-	GetRequestBase() interface{}
+type IRequestBase interface {
+	GetNewRequestBase() interface{}
 	GetRequestBaseHead() interface{}
 	GetRequestBaseBody() interface{}
 	GetRequestBaseTail() interface{}
@@ -9,7 +9,10 @@ type IRequest interface {
 	SetRequestBaseBody(requestBody interface{})
 	SetRequestBaseTail(RequestTail interface{})
 	SetRequestBase(request *interface{})
-	GetRequestHead() interface{}
+	IRequestToData
+}
+type IRequestHead interface {
+	GetNewRequestHead() interface{}
 	GetRequestHeadSourceIP() string
 	GetRequestHeadInputType() string
 	GetRequestHeadFrom() string
@@ -17,15 +20,26 @@ type IRequest interface {
 	SetRequestHeadIP(ip string)
 	SetRequestHeadInputType(typeRequest string)
 	SetRequestHeadFrom(from string)
-	SetRequestMethod(method string)
+	SetRequestHeadMethod(method string)
 	SetRequestHead(request interface{})
+}
+type IRequestBody interface {
+	GetNewRequestBody() interface{}
 	GetRequestPayload() string
 	SetRequestPayload(payload string)
+	SetRequestBody(requestBody interface{})
+}
+type IRequestTail interface {
+	GetNewRequestTail() interface{}
 	GetRequestTailTo() string
 	GetRequestTailDesIP() string
 	GetRequestTailOutpputType() string
-	SetTailTo(to string)
+	SetRequestTailTo(to string)
 	SetRequestTailDesIP(ip string)
 	SetRequestTailOutputType(typeRequest string)
-	ToString() string
+}
+type IRequestToData interface {
+	HeadToString() string
+	BodyToString() string
+	TailToString() string
 }

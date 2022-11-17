@@ -18,7 +18,7 @@ func main() {
 }
 
 func readRequest(w http.ResponseWriter, r *http.Request) {
-	requestIn := request.GetRequestBase()
+	requestIn := request.GetNewRequestBase()
 	requestHead := requestIn.GetRequestBaseHead()
 	requestBody := requestIn.GetRequestBaseBody()
 	requestTail := requestIn.GetRequestBaseTail()
@@ -26,7 +26,7 @@ func readRequest(w http.ResponseWriter, r *http.Request) {
 	requestHead.SetRequestHeadFrom(r.Host)
 	requestHead.SetRequestHeadInputType(r.Method)
 	requestHead.SetRequestHeadIP("ip")
-	requestHead.SetRequestMethod(r.Method)
+	requestHead.SetRequestHeadMethod(r.Method)
 
 	requestIn.SetRequestBaseHead(requestHead)
 	requestIn.SetRequestBaseTail(requestTail)
@@ -45,6 +45,9 @@ func readRequest(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Println("dfas: ")
 	fmt.Println(jsm.GetJsonObj())
+
+	// var x request.IRequest
+	// x.GetRequestBase()
 
 	io.WriteString(w, s)
 }

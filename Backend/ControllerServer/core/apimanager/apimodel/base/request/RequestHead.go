@@ -7,7 +7,7 @@ type requestHead struct {
 	requestMethod    string
 }
 
-func (request *requestHead) GetRequestHead() *requestHead {
+func (request *requestHead) GetNewRequestHead() *requestHead {
 	return request
 }
 func (requestHead *requestHead) GetRequestMethod() string {
@@ -33,14 +33,14 @@ func (requestHead *requestHead) SetRequestHeadInputType(typeRequest string) {
 func (requestHead *requestHead) SetRequestHeadFrom(from string) {
 	requestHead.requestFrom = from
 }
-func (requestHead *requestHead) SetRequestMethod(method string) {
+func (requestHead *requestHead) SetRequestHeadMethod(method string) {
 	requestHead.requestMethod = method
 }
 func (request *requestHead) ToString() string {
 	returnString := ""
 	returnString += "From: " + request.requestFrom + "\n"
-	returnString += "Source IP: " + request.requestFrom + "\n"
-	returnString += "Method: " + request.requestFrom + "\n"
-	returnString += "Type: " + request.requestFrom + "\n"
+	returnString += "Source IP: " + request.requestSourceIP + "\n"
+	returnString += "Method: " + request.requestMethod + "\n"
+	returnString += "Input Type: " + request.requestInputType + "\n"
 	return returnString
 }

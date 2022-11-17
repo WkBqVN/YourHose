@@ -6,7 +6,6 @@ import (
 
 type RequestReceiver struct {
 	requestObj request.RequestBase
-	timeIn int
-	isValid bool
+	timeIn     int
+	isValid    bool
 }
-
