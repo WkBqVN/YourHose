@@ -6,7 +6,7 @@ type RequestBase struct {
 	tail requestTail
 }
 
-func GetRequestBase() RequestBase {
+func GetNewRequestBase() RequestBase {
 	return RequestBase{}
 }
 
@@ -39,4 +39,14 @@ func (request *RequestBase) ToString() string {
 	returnString += "Body: " + request.body.ToString() + "\n"
 	returnString += "Tail: " + request.tail.ToString() + "\n"
 	return returnString
+}
+
+func (request *RequestBase) HeadToString() string {
+	return request.head.ToString()
+}
+func (request *RequestBase) BodyToString() string {
+	return request.tail.ToString()
+}
+func (request *RequestBase) TailToString() string {
+	return request.body.ToString()
 }
