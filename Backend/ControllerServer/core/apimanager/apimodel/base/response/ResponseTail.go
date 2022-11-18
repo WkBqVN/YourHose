@@ -21,7 +21,7 @@ func (responseTail *responseTail) GetResponseTailOutpputType() string {
 func (responseTail *responseTail) SetResponseTailFrom(from string) {
 	responseTail.responseFrom = from
 }
-func (responseTail *responseTail) SetResponseTailDesIP(ip string) {
+func (responseTail *responseTail) SetResponseTailSourceIP(ip string) {
 	responseTail.responseSouceIP = ip
 }
 func (responseTail *responseTail) SetResponseTailOutputType(typeRequest string) {

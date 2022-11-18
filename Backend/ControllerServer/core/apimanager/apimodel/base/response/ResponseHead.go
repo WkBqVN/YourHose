@@ -7,7 +7,7 @@ type responseHead struct {
 	responseMethod  string
 }
 
-func GetNewResponseHead() responseHead {
+func GetNewResponseHead() responseHead{
 	return responseHead{}
 }
 func (responseHead *responseHead) GetResponseHeadDesIP() string {

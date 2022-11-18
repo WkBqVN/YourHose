@@ -5,16 +5,15 @@ import (
 	"controllerserver/core/data"
 	"fmt"
 	"io"
-	"log"
+	// "log"
 	"net/http"
+"controllerserver/core/apimanager/apicontroller"
 )
 
 func main() {
-	http.HandleFunc("/", readRequest)
-	err := http.ListenAndServe(":5050", nil)
-	if err != nil {
-		log.Fatal(err)
-	}
+	controller :=  apicontroller.GetNewController();
+	controller.StartServerUp(":5050")
+	// http.HandleFunc("/", readRequest)
 }
 
 func readRequest(w http.ResponseWriter, r *http.Request) {
