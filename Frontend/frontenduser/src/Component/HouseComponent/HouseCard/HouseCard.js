@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import "./HouseCard.css";
 
-function HouseCard() {
-    const [props,setProps] = useState(0)
+function HouseCard(props) {
+    // const [props,setProps] = useState(0)
     return (
         <div className="HouseCard">
             <Card>
@@ -20,4 +20,11 @@ function HouseCard() {
         </div>
     );
 }
+
+function generateHouseCardSlide(propsArr) {
+    for (let i = 0; i < propsArr.length; i++) {
+
+    }
+}
+
 export default HouseCard;  
