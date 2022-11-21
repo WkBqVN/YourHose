@@ -1,30 +1,41 @@
-import { useState } from 'react';
+import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import "./HouseCard.css";
 
-function HouseCard(props) {
-    // const [props,setProps] = useState(0)
+function HouseCard() {
+    let cardList = getCardList()
     return (
-        <div className="HouseCard">
-            <Card>
-                <Card.Img variant="top" src={props.img} />
-                <Card.Body>
-                    <Card.Title>{props.price}</Card.Title>
-                    <Card.Text>
-                        {props.comment}
-                    </Card.Text>
-                    <Card.Title>{props.address}</Card.Title>
-                    <Button variant="primary">Read More</Button>
-                </Card.Body>
-            </Card>
-        </div>
-    );
+        [
+            <div>
+                <GenerateHouseCard />
+            </div>
+        ]
+    )
+}
+function GenerateHouseCard({ img,price,comment,address }) {
+    <div className="HouseCard">
+        <Card>
+            <Card.Img variant="top" src={img} />
+            <Card.Body>
+                <Card.Title>{price}</Card.Title>
+                <Card.Text>
+                    {comment}
+                </Card.Text>
+                <Card.Title>{address}</Card.Title>
+                <Button variant="primary">Read More</Button>
+            </Card.Body>
+        </Card>
+    </div>
+}
+function getCardList() {
+
 }
 
-function generateHouseCardSlide(propsArr) {
-    for (let i = 0; i < propsArr.length; i++) {
-
-    }
+HouseCard.propTypes = {
+    img : PropTypes.string.isRequired,
+    address : PropTypes.string.isRequired,
+    comment : PropTypes.string.isRequired,
+    price : PropTypes.number.isRequired,
 }
-
 export default HouseCard;  

@@ -7,10 +7,7 @@ function App() {
     <div className="App">
       <NavbarTop />
       <div>
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
-        <HouseCard />
+        <HouseCardSlide />
       </div>
     </div>
   );
