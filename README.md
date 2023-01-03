@@ -19,7 +19,7 @@ Self Learning Project
 
 10. Create Api generator for component?
 
-11. Switch beetween postgres or mssql up to what is up(golang server is handle this)
+11. Switch beetween postgres or mssql up to what is up(golang server is handle this) (many server more will added to controller)
 
 ports:
 + reactjs: 3000
