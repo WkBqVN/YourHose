@@ -11,7 +11,7 @@ Self Learning Project
 
 6. Data Analyst Server - Python
 
-7. Controller(Admin) - Deploy Host Server Golang - RestApi?
+7. Controller(Admin) - Deploy Host Server Golang - RestApi? (use abstract factory to handle)
 
 8. Chatting and stored noted is nodejs?
 
